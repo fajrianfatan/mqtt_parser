@@ -1,0 +1,15 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - 8086:8086
+    volumes:
+      - myInfluxVolume:/var/lib/influxdb2
+    environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=bmkg_aws
+      - INFLUXDB_ADMIN_PASSWORD=asdf1234
+
+volumes:
+  myInfluxVolume:
